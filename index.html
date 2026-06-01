@@ -1,0 +1,1064 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Roach Doctor | Csótányirtó Gél — Utánvéttel Magyarországon</title>
+<link rel="preload" as="image" href="images/roach-hero-bg.webp" fetchpriority="high">
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<link rel="preconnect" href="https://analytics.tiktok.com" crossorigin>
+<style>
+:root{
+  --black:#060e08;
+  --dark:#0d1810;
+  --ink:#141a15;
+  --poison:#237a32;
+  --poison2:#1a5c26;
+  --lime:#5fcf3a;
+  --danger:#d92d20;
+  --orange:#f05a24;
+  --cream:#f2f7f0;
+  --muted:#566356;
+  --line:#ccddc8;
+  --shadow:0 24px 60px rgba(6,14,8,.18);
+  --grad:linear-gradient(90deg,#1a5c26,#5fcf3a);
+  --grad-r:linear-gradient(135deg,#237a32,#5fcf3a);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden;padding-bottom:96px}
+img{max-width:100%;display:block}
+button,input{font-family:inherit}
+.wrap{width:min(1160px,calc(100% - 38px));margin:auto}
+
+/* NAV */
+.nav{position:fixed;z-index:90;top:0;left:0;right:0;height:40px;display:flex;align-items:center;justify-content:center;background:rgba(6,14,8,.97);transition:.28s ease}
+.nav-brand{color:#fff;font-size:16px;font-weight:900;letter-spacing:.06em;display:flex;align-items:center;gap:7px}
+.nav-brand .bug{font-size:18px}
+.nav.is-glass{top:calc(env(safe-area-inset-top,0px)+10px);left:50%;right:auto;transform:translateX(-50%);width:min(860px,calc(100%-32px));height:52px;border-radius:999px;background:rgba(10,24,12,.92);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:1px solid rgba(95,207,58,.2);box-shadow:0 18px 48px rgba(0,0,0,.4)}
+.nav.hidden{transform:translateY(-120px);opacity:0;pointer-events:none}
+.nav.is-glass.hidden{transform:translate(-50%,-120px)}
+
+/* BUTTONS */
+.btn{border:0;border-radius:14px;background:var(--poison);color:#fff;font-weight:900;min-height:50px;padding:0 32px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:.18s ease;letter-spacing:.01em}
+.btn:hover{filter:brightness(1.1)}
+.btn.hot{background:linear-gradient(135deg,#c0260e,#e8431a);min-height:62px;font-size:19px;width:100%;border-radius:16px;box-shadow:0 18px 44px rgba(208,38,14,.3);letter-spacing:.02em}
+.btn.green-hot{background:var(--grad-r);min-height:62px;font-size:19px;width:100%;border-radius:16px;box-shadow:0 18px 44px rgba(35,122,50,.3)}
+.soft-btn{border:1.5px solid #b0ccac;color:var(--poison);background:#fff;border-radius:999px;font-weight:900;font-size:13px;padding:11px 22px;cursor:pointer}
+
+/* HERO */
+.hero{position:relative;background:var(--dark);overflow:hidden;padding-top:40px}
+.hero-bg{position:absolute;inset:40px 0 0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:55% 50%;opacity:.55}
+.hero-overlay{position:absolute;inset:40px 0 0;background:linear-gradient(90deg,rgba(6,14,8,.92) 0%,rgba(6,14,8,.75) 45%,rgba(6,14,8,.2) 100%)}
+.hero-content{position:relative;z-index:2;min-height:500px;display:flex;align-items:center}
+.hero-copy{max-width:600px;padding:50px 0 54px}
+.stars-row{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.stars-img{width:110px}
+.stars-count{color:rgba(255,255,255,.75);font-size:13px;font-weight:800}
+.badge-top{display:inline-flex;align-items:center;gap:6px;background:rgba(217,45,32,.22);border:1px solid rgba(217,45,32,.5);border-radius:999px;padding:7px 14px;font-size:12px;font-weight:900;color:#ff7a6a;margin-bottom:16px}
+.hero h1{font-size:clamp(32px,4.8vw,58px);line-height:.96;letter-spacing:-.055em;margin:0 0 18px;font-weight:900;color:#fff}
+.hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 .red{color:#ff5a45}
+.hero-sub{font-size:16px;line-height:1.58;color:rgba(255,255,255,.7);margin:0 0 26px;max-width:520px}
+.hero-note{font-size:12px;color:rgba(255,255,255,.4);margin-top:12px;font-weight:700}
+
+/* TRUST */
+.trust-strip{background:#060e08;border-bottom:1px solid rgba(95,207,58,.12);padding:12px 0}
+.trust-items{display:flex;justify-content:center;gap:26px;font-size:12px;font-weight:900;color:#5fcf3a;flex-wrap:wrap}
+
+/* PROOF BAND */
+.proof-band{background:linear-gradient(135deg,#060e08,#0d1810);padding:26px 0;border-bottom:1px solid rgba(95,207,58,.1)}
+.proof-nums{display:flex;justify-content:center;gap:clamp(20px,5vw,80px);flex-wrap:wrap}
+.pnum{text-align:center}
+.pnum .big{font-size:clamp(26px,3.5vw,40px);font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.pnum .lbl{font-size:11px;font-weight:800;color:rgba(255,255,255,.45);margin-top:4px;text-transform:uppercase;letter-spacing:.08em}
+
+/* SECTIONS */
+section{padding:70px 0}
+.dark-sec{background:var(--dark)}
+.cream-sec{background:var(--cream)}
+.center{text-align:center}
+.eyebrow{font-size:11px;font-weight:900;text-transform:uppercase;color:var(--poison);letter-spacing:.14em;margin:0 0 8px}
+.dark-sec .eyebrow{color:#5fcf3a}
+h2{font-size:clamp(29px,3.8vw,46px);line-height:1.02;letter-spacing:-.05em;margin:0 0 14px;font-weight:900}
+.dark-sec h2{color:#fff}
+.lead{font-size:16px;line-height:1.62;color:#546354;margin:0 auto 34px;max-width:700px}
+.dark-sec .lead{color:rgba(255,255,255,.6)}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* IMAGE SECTIONS */
+.img-section{margin:32px 0}
+.img-section img{width:100%;border-radius:22px;box-shadow:var(--shadow)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.two-col img{border-radius:18px;box-shadow:0 14px 36px rgba(0,0,0,.12);width:100%}
+
+/* HOW IT WORKS STEPS */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
+.step-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 18px;position:relative;overflow:hidden}
+.step-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-r)}
+.step-num{width:38px;height:38px;border-radius:999px;background:var(--grad-r);color:#fff;font-weight:900;font-size:15px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.step-card h3{font-size:15px;margin:0 0 6px;color:#0d1810;font-weight:900}
+.step-card p{font-size:13px;line-height:1.46;color:var(--muted);margin:0}
+.step-tag{display:inline-block;background:#ecf9e8;color:var(--poison);border-radius:999px;padding:4px 11px;font-size:11px;font-weight:900;margin-top:8px}
+
+/* OFFER / PICKER */
+.offer-sec{background:linear-gradient(180deg,#e8f4e5 0%,#fff 100%)}
+.picker-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:34px;align-items:start;margin-top:32px}
+.picker-left{position:sticky;top:90px}
+.pack-visual{background:var(--dark);border-radius:22px;padding:26px;display:flex;align-items:center;justify-content:center;min-height:260px;margin-bottom:14px;box-shadow:0 12px 32px rgba(0,0,0,.22)}
+.pack-visual img{max-height:260px;object-fit:contain;transition:opacity .2s ease}
+.pack-math{background:#fff;border-radius:18px;padding:16px 20px;box-shadow:0 8px 24px rgba(0,0,0,.07)}
+.math-row{display:flex;justify-content:space-between;font-size:13px;font-weight:700;padding:5px 0;border-bottom:1px solid #eef5eb;color:#6b7f6b}
+.math-total{display:flex;justify-content:space-between;font-size:14px;font-weight:900;padding:9px 0 3px}
+.math-total.strike span{color:#a0b09e;text-decoration:line-through}
+.math-total.savings span{color:#16884f;font-size:15px}
+.picker-options{display:flex;flex-direction:column;gap:11px}
+.pick-opt{display:block;cursor:pointer;position:relative}
+.pick-opt input{position:absolute;opacity:0;width:0;height:0}
+.pick-inner{display:flex;align-items:center;gap:13px;background:#fff;border:2px solid #cddeca;border-radius:20px;padding:15px 16px;transition:.2s ease;position:relative}
+.pick-opt.is-selected .pick-inner{border-color:var(--poison);background:#f0f9ed;box-shadow:0 8px 26px rgba(35,122,50,.14)}
+.pick-thumb{width:60px;height:60px;object-fit:contain;flex-shrink:0;border-radius:12px;background:var(--dark)}
+.pick-info{flex:1;min-width:0}
+.pick-name{display:block;font-size:15px;font-weight:900;color:#0d1810;margin-bottom:3px}
+.pick-desc{display:block;font-size:12px;color:#6b7f6b;font-weight:600;line-height:1.4}
+.pick-save{display:block;font-size:12px;color:#16884f;font-weight:900;margin-top:3px}
+.pick-price-col{text-align:right;flex-shrink:0}
+.pick-price-old{display:block;font-size:12px;font-weight:900;color:#a0b09e;text-decoration:line-through}
+.pick-price-new{display:block;font-size:20px;font-weight:900;color:var(--danger)}
+.pick-single-price{font-size:19px;font-weight:900;color:var(--poison)}
+.bundle-badge{position:absolute;top:-11px;right:14px;background:var(--danger);color:#fff;font-size:11px;font-weight:900;border-radius:999px;padding:4px 13px;letter-spacing:.03em;white-space:nowrap}
+.free-units{display:inline-flex;align-items:center;gap:4px;background:rgba(95,207,58,.15);border:1px solid rgba(95,207,58,.35);border-radius:999px;padding:3px 10px;font-size:11px;font-weight:900;color:var(--poison);margin-top:4px}
+.cta-wrap{margin-top:10px}
+.paylines{margin-top:10px;display:flex;flex-direction:column;gap:4px}
+.payline{text-align:center;font-size:12px;color:#4a5c4a;font-weight:800}
+.urgency-note{text-align:center;color:var(--danger);font-weight:900;font-size:13px;margin-top:8px}
+
+/* INLINE FORM */
+.form-box{background:linear-gradient(135deg,#060e08 0%,#112016 100%);border-radius:28px;padding:34px 30px 30px;margin-top:30px;box-shadow:0 28px 70px rgba(0,0,0,.4)}
+.form-box h3{color:#fff;font-size:22px;font-weight:900;margin:0 0 4px;text-align:center}
+.form-box .sub{color:rgba(255,255,255,.6);font-size:13px;font-weight:700;text-align:center;margin:0 0 20px}
+.proof-bar{display:flex;align-items:center;justify-content:center;gap:7px;background:rgba(95,207,58,.1);border:1px solid rgba(95,207,58,.22);border-radius:12px;padding:10px 16px;margin-bottom:14px;color:#fff;font-size:12px;font-weight:800}
+.cdown-box{background:rgba(217,45,32,.16);border:1.5px solid rgba(217,45,32,.4);border-radius:16px;padding:12px 16px;margin-bottom:16px;text-align:center}
+.cdown-label{color:rgba(255,255,255,.65);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+.cdown-timer{color:#ff8c5a;font-size:32px;font-weight:900;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.selected-box{background:rgba(95,207,58,.1);border:1px solid rgba(95,207,58,.25);border-radius:14px;padding:12px 18px;color:#fff;font-weight:900;font-size:14px;margin-bottom:18px;text-align:center;line-height:1.5}
+.selected-box .price{font-size:22px;color:#5fcf3a;display:block;margin-top:2px}
+.form-grid{display:grid;gap:11px}
+.field label{color:rgba(255,255,255,.8);font-size:12px;font-weight:900;display:block;margin-bottom:5px}
+.field input{background:rgba(255,255,255,.96);border:2px solid transparent;border-radius:13px;font-size:16px;height:52px;width:100%;padding:0 15px;transition:.15s}
+.field input:focus{border-color:#5fcf3a;outline:none;background:#fff}
+.courier-line{display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:11px 16px;margin:12px 0;color:#fff;font-size:12px;font-weight:900}
+.form-note{text-align:center;color:rgba(255,255,255,.5);font-size:11px;font-weight:700;margin:5px 0 0}
+
+/* REVIEWS */
+.review-shell{position:relative;margin-top:26px}
+.review-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 0 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.review-track::-webkit-scrollbar{display:none}
+.rev-card{scroll-snap-align:center;flex:0 0 min(330px,82vw);background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 12px 32px rgba(6,14,8,.08);transition:transform .3s ease,opacity .3s ease,box-shadow .3s ease;position:relative}
+.rev-card.is-active{border-color:#b8ddb2;box-shadow:0 22px 54px rgba(35,122,50,.12);transform:scale(1);opacity:1}
+.rev-card:not(.is-active){transform:scale(.94);opacity:.65}
+.rev-card::before{content:'"';position:absolute;right:16px;top:6px;font-size:78px;font-weight:900;color:rgba(35,122,50,.06);line-height:1}
+.rev-stars{width:96px;margin:0 0 10px}
+.rev-card p{font-size:14px;line-height:1.56;color:#4a5c4a;margin:0}
+.rev-head{display:flex;align-items:center;gap:11px;margin-top:14px}
+.rev-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#0d1810,#237a32);color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rev-badge{background:#f0f9ed;color:var(--poison);border-radius:999px;padding:5px 10px;font-size:11px;font-weight:900}
+.verified{font-size:11px;font-weight:900;color:#16884f}
+.rev-topline{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.rev-dots{text-align:center;margin-top:10px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:999px;background:#ccddc8;margin:0 3px;cursor:pointer;transition:width .2s ease}
+.dot.active{width:26px;background:var(--poison)}
+
+/* WHY SECTION */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.why-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 10px 26px rgba(6,14,8,.06)}
+.why-card .ico{font-size:34px;margin-bottom:10px}
+.why-card h3{font-size:15px;margin:0 0 6px;font-weight:900;color:#0d1810}
+.why-card p{font-size:13px;line-height:1.46;color:var(--muted);margin:0}
+
+/* COMPARE */
+.cmp-wrap{display:grid;grid-template-columns:.7fr 1.3fr;gap:28px;align-items:start}
+.cmp-stage{overflow:hidden}
+.cmp-slider{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:16px 0 32px;scrollbar-width:none}
+.cmp-slider::-webkit-scrollbar{display:none}
+.cmp-card{scroll-snap-align:center;flex:0 0 min(340px,82vw);border-radius:28px;padding:28px 24px;background:#f2f7f0;box-shadow:0 14px 36px rgba(6,14,8,.08);transition:transform .3s ease,opacity .3s ease}
+.cmp-card.snap{background:linear-gradient(135deg,#060e08,#112016);color:#fff}
+.cmp-card.is-active{transform:scale(1);opacity:1;box-shadow:0 24px 56px rgba(6,14,8,.16)}
+.cmp-card:not(.is-active){transform:scale(.93);opacity:.62}
+.cmp-head{font-size:20px;font-weight:900;margin-bottom:22px;display:flex;align-items:center;gap:10px}
+.cmp-row{border-top:1px solid rgba(255,255,255,.1);padding:13px 0}
+.cmp-card:not(.snap) .cmp-row{border-top-color:rgba(0,0,0,.08)}
+.cmp-label{font-size:14px;font-weight:700;color:rgba(255,255,255,.6);margin-bottom:5px}
+.cmp-card:not(.snap) .cmp-label{color:#7a8f7a}
+.cmp-val{font-size:14px;font-weight:700;color:rgba(255,255,255,.9)}
+.cmp-card:not(.snap) .cmp-val{color:#1a2e1a}
+.cmp-hint{text-align:center;color:#8fa08f;font-size:12px;font-weight:800;margin-top:-14px}
+.cmp-dots{text-align:center;margin-top:-20px}
+
+/* FINAL */
+.final-sec{background:var(--dark)}
+.final-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.final-img{border-radius:22px;overflow:hidden}
+.final-img img{width:100%;object-fit:cover}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 0 26px}
+.chk{font-size:13px;font-weight:900;background:rgba(255,255,255,.06);border:1px solid rgba(95,207,58,.18);border-radius:999px;padding:10px 14px;color:#fff}
+
+/* FOOTER */
+footer{background:#030808;color:#fff;padding:50px 0 60px}
+.foot-brand{font-size:18px;font-weight:900;color:#5fcf3a;margin-bottom:12px;display:flex;align-items:center;gap:7px}
+.privacy{color:rgba(255,255,255,.6);font-size:12px;text-decoration:none}
+.disc{color:rgba(255,255,255,.38);font-size:11px;line-height:1.58;max-width:880px;margin-top:8px}
+
+/* STICKY CTA */
+.sticky-cta{position:fixed;z-index:80;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(6,14,8,.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid rgba(95,207,58,.15);display:flex;align-items:center;justify-content:center;gap:12px;transform:translateY(130%);transition:.25s ease}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-cta .btn{flex:1;max-width:540px;min-height:58px;font-size:17px}
+
+/* UPSELL MODAL */
+.upsell-overlay{position:fixed;inset:0;z-index:120;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;padding:20px}
+.upsell-overlay.show{display:flex}
+.upsell-box{background:#fff;border-radius:28px;width:min(580px,100%);max-height:94vh;overflow:auto;padding:28px 24px;box-shadow:0 30px 90px rgba(0,0,0,.4)}
+.upsell-header{text-align:center;margin-bottom:16px}
+.upsell-header h2{font-size:22px;font-weight:900;margin:0 0 6px;color:#0d1810;line-height:1.2}
+.upsell-header p{font-size:14px;color:#546354;margin:0;line-height:1.55}
+.upsell-offer-card{border:2px solid var(--orange);background:linear-gradient(135deg,#fffdf8,#fff);border-radius:22px;padding:20px;margin:16px 0}
+.upsell-img{height:130px;object-fit:contain;margin:0 auto 14px;display:block}
+.upsell-offer-card h3{text-align:center;font-size:18px;font-weight:900;margin:0 0 10px;color:#0d1810;line-height:1.3}
+.upsell-price-row{text-align:center;margin-bottom:12px}
+.upsell-old{font-size:20px;font-weight:900;color:#a0b09e;text-decoration:line-through;margin-right:8px}
+.upsell-new{font-size:46px;font-weight:900;color:var(--danger);display:block;line-height:1}
+.upsell-per{font-size:13px;color:#546354;font-weight:800;margin-top:2px}
+.upsell-reason{background:#fff9f0;border:1px solid #ffd4a8;border-radius:16px;padding:14px 16px;margin:12px 0;font-size:13px;line-height:1.55;color:#5a3a1a}
+.upsell-summary{background:#f0f9ed;border:1px solid #b8ddb2;border-radius:14px;padding:12px 16px;margin:12px 0;font-size:14px;font-weight:900;color:#0d3a14;text-align:center;line-height:1.6}
+.no-link{display:block;text-align:center;color:#8fa08f;text-decoration:underline;font-size:13px;font-weight:700;margin-top:14px;cursor:pointer;padding:8px}
+
+/* THANK YOU */
+.thankyou-overlay{position:fixed;inset:0;z-index:130;background:rgba(3,8,8,.9);display:none;align-items:center;justify-content:center;padding:22px;text-align:center}
+.thankyou-overlay.show{display:flex}
+.thank-card{background:#fff;border-radius:28px;width:min(500px,100%);padding:36px 28px;box-shadow:0 30px 90px rgba(0,0,0,.4)}
+.thank-card .big-check{font-size:64px;margin-bottom:14px}
+.thank-card h2{font-size:26px;font-weight:900;margin:0 0 10px;color:#0d1810}
+.thank-card p{font-size:15px;color:#546354;line-height:1.58;margin:0 0 22px}
+
+/* FADE */
+.fade{opacity:0;transform:translateY(18px);transition:.65s ease}
+.fade.in{opacity:1;transform:none}
+
+/* MOBILE */
+@media(max-width:860px){
+  body{padding-bottom:88px}
+  .wrap{width:calc(100% - 30px);max-width:480px}
+  .nav{height:34px}
+  .nav.is-glass{height:52px;width:calc(100% - 30px)}
+  .hero{padding-top:34px}
+  .hero-bg{position:relative;inset:auto;height:280px;overflow:hidden}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:55% 40%;opacity:.7}
+  .hero-overlay{display:none}
+  .hero-content{min-height:0;display:block}
+  .hero-copy{padding:22px 0 28px;text-align:center;max-width:100%}
+  .badge-top{margin:0 auto 14px}
+  .stars-row{justify-content:center}
+  .hero h1{font-size:28px;max-width:340px;margin:0 auto 14px}
+  .hero-sub{font-size:14px;max-width:340px;margin:0 auto 20px}
+  .hero .btn{width:min(340px,100%);margin:0 auto}
+  .trust-items{gap:8px;font-size:10px}
+  .trust-items span{background:rgba(95,207,58,.08);border-radius:999px;padding:6px 10px}
+  .proof-nums{gap:18px}
+  .pnum .big{font-size:26px}
+  section{padding:50px 0}
+  h2{font-size:27px}
+  .lead{font-size:14px;margin-bottom:22px}
+  .steps-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .step-card{padding:16px 14px}
+  .two-col{grid-template-columns:1fr;gap:14px}
+  .picker-wrap{grid-template-columns:1fr;gap:18px}
+  .picker-left{position:static;display:flex;gap:12px}
+  .pack-visual{flex:0 0 120px;min-height:110px;padding:14px;border-radius:16px}
+  .pack-visual img{max-height:90px}
+  .pack-math{flex:1;padding:10px 12px;border-radius:14px}
+  .math-row{font-size:11px;padding:4px 0}
+  .math-total{font-size:12px;padding:6px 0 2px}
+  .pick-inner{padding:12px 12px;border-radius:16px}
+  .pick-thumb{width:48px;height:48px}
+  .pick-name{font-size:13px}
+  .pick-price-new{font-size:17px}
+  .bundle-badge{font-size:10px;padding:3px 10px}
+  .form-box{padding:22px 16px 20px;border-radius:22px;margin-top:18px}
+  .form-box h3{font-size:18px}
+  .cdown-timer{font-size:26px}
+  .selected-box .price{font-size:18px}
+  .why-grid{grid-template-columns:1fr}
+  .cmp-wrap{display:block}
+  .cmp-stage{margin-left:-15px;margin-right:-15px;padding:6px 0}
+  .cmp-slider{padding:18px 24px 36px}
+  .cmp-card{flex:0 0 min(100vw - 50px,360px);border-radius:24px;padding:22px 18px}
+  .final-grid{grid-template-columns:1fr;gap:22px}
+  .checks{grid-template-columns:1fr}
+  .review-shell{margin-left:-15px;margin-right:-15px}
+  .review-track{padding:8px 18px 16px}
+  .rev-card{flex:0 0 calc(100vw - 60px);border-radius:20px;padding:14px}
+  .sticky-cta{padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+  .sticky-cta .btn{min-height:54px;font-size:15px}
+  .upsell-new{font-size:36px}
+}
+@media(max-width:390px){
+  .hero h1{font-size:24px}
+  .steps-grid{grid-template-columns:1fr}
+  .cmp-card{flex-basis:calc(100vw - 38px)}
+  .sticky-cta .btn{font-size:14px}
+}
+</style>
+
+<script>
+window.__loadPixels=function(){
+  if(window.__pixelsLoaded)return;window.__pixelsLoaded=true;
+  /* TikTok Pixel */
+  !function(w,d,t){
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
+    ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];
+    ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+    for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
+    ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};
+    ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js";
+      ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=r;ttq._t=ttq._t||{};ttq._t[e]=+new Date;
+      ttq._o=ttq._o||{};ttq._o[e]=n||{};
+      var a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=r+"?sdkid="+e+"&lib="+t;
+      var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(a,s)};
+    ttq.load('D6QB8PBC77U4MV0O9RP0');ttq.page();
+  }(window,document,'ttq');
+  /* Meta Pixel */
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','778731385018899');
+  fbq('track','PageView');
+};
+if('requestIdleCallback' in window){requestIdleCallback(window.__loadPixels,{timeout:1800});}
+else{window.addEventListener('load',function(){setTimeout(window.__loadPixels,700);});}
+</script>
+</head>
+<body>
+
+<nav class="nav" id="floatingNav">
+  <div class="nav-brand"><span class="bug">🪳</span>ROACH DOCTOR</div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg"><img fetchpriority="high" loading="eager" decoding="async" src="images/roach-hero-bg.webp" alt=""></div>
+  <div class="hero-overlay"></div>
+  <div class="wrap hero-content">
+    <div class="hero-copy fade">
+      <div class="badge-top">⚠️ Korlátozott készlet — 2 000 csomag raktáron</div>
+      <div class="stars-row">
+        <img decoding="async" class="stars-img" src="images/result.webp" alt="5 csillag" style="width:110px;height:22px;object-fit:cover;object-position:top;border-radius:4px">
+        <span class="stars-count">4.9/5 • 1 200+ vélemény</span>
+      </div>
+      <h1>Csótány a lakásban?<br><span class="red">Ma éjjel vége.</span><br><em>Garantáltan.</em></h1>
+      <p class="hero-sub">Egy apró pötty a sarokban. Éjjel dolgozik. Reggel csend. A Roach Doctor kaszkád hatással pusztítja el a <strong style="color:#fff">teljes fészket</strong> — nem csak az egyedeket.</p>
+      <button class="btn green-hot" data-scroll="#offer" style="width:min(360px,100%);margin:0 auto 0 0;font-size:17px">KÉREM A GÉLT — UTÁNVÉTTEL →</button>
+      <p class="hero-note">Csak akkor fizetsz, amikor a csomag megérkezik az ajtódhoz.</p>
+    </div>
+  </div>
+</header>
+
+<!-- TRUST -->
+<div class="trust-strip">
+  <div class="wrap trust-items">
+    <span>✅ 24 órán belül látható eredmény</span>
+    <span>🥚 Tojásirtás is</span>
+    <span>📦 Diszkrét csomagolás</span>
+    <span>🚚 1–3 munkanap kiszállítás</span>
+    <span>💳 Fizetés átvételkor</span>
+  </div>
+</div>
+
+<!-- PROOF NUMBERS -->
+<div class="proof-band">
+  <div class="wrap proof-nums">
+    <div class="pnum"><div class="big">24 ÓRA</div><div class="lbl">Első eredmény</div></div>
+    <div class="pnum"><div class="big">98%</div><div class="lbl">Sikeres kezelés</div></div>
+    <div class="pnum"><div class="big">1 200+</div><div class="lbl">Magyar vásárló</div></div>
+    <div class="pnum"><div class="big">3 lépés</div><div class="lbl">Az egész fészek</div></div>
+  </div>
+</div>
+
+<!-- BEFORE/AFTER -->
+<section class="cream-sec">
+  <div class="wrap center">
+    <p class="eyebrow">Miért más ez?</p>
+    <h2>A spray csak az egyedeket öli. <span class="grad">Ez a fészket.</span></h2>
+    <p class="lead">Nézd meg a különbséget — egy kezeléssel.</p>
+    <div class="img-section fade">
+      <img loading="lazy" decoding="async" src="images/before-after.webp" alt="Előtte és utána">
+    </div>
+  </div>
+</section>
+
+<!-- CASCADE EFFECT -->
+<section class="dark-sec">
+  <div class="wrap center">
+    <p class="eyebrow">A kaszkád hatás</p>
+    <h2>Hogyan <span class="grad">pusztítja el a teljes fészket?</span></h2>
+    <p class="lead">Nem kell minden csótányt megtalálnod. Elég egy érintkezés — a méreg magától terjed.</p>
+    <div class="img-section fade">
+      <img loading="lazy" decoding="async" src="images/cascade-effect.webp" alt="Kaszkád hatás">
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="cream-sec">
+  <div class="wrap center">
+    <p class="eyebrow">Hogyan használd</p>
+    <h2>4 lépés. <span class="grad">5 perc munkád van.</span></h2>
+    <p class="lead">Nem kell vegyi köd, nem kell elhagyni a lakást. Csak a gél és egy este türelem.</p>
+    <div class="steps-grid fade">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Este elhelyezed</h3>
+        <p>Apró pöttyöket nyomsz a csótányok kedvelt pontjaira — sarkok, csövek mögé, szekrény aljára.</p>
+        <span class="step-tag">⏱ 5 perc</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>A csótányok rátalálnak</h3>
+        <p>A csali formula ellenállhatatlan vonzerőként hat. Ők jönnek hozzá — te nem csinálsz semmit.</p>
+        <span class="step-tag">🌙 Éjjel dolgozik</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Kaszkád hatás indul</h3>
+        <p>Az érintett egyed visszatér a fészekbe és megfertőzi a többieket. A tojások sem kelnek ki.</p>
+        <span class="step-tag">🔁 Automatikus</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3>Reggel: csend</h3>
+        <p>24 órán belül érzed a különbséget. A fészek elpusztul — nem csak néhány egyed.</p>
+        <span class="step-tag">✅ Teljes fészek</span>
+      </div>
+    </div>
+    <div class="two-col fade" style="margin-top:24px">
+      <img loading="lazy" decoding="async" src="images/how-it-works.webp" alt="Alkalmazás">
+      <img loading="lazy" decoding="async" src="images/result.webp" alt="Eredmény">
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer-sec" id="offer">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">Válaszd ki a csomagod</p>
+      <h2>Roach Doctor <span class="grad">Csótányirtó Gél</span></h2>
+      <p class="lead">Minél több csomagot veszel, annál több egységet kapsz ingyen. Egy kezelés ritkán elég — a fészek nagy lehet.</p>
+    </div>
+    <div class="picker-wrap fade">
+      <!-- LEFT: visual + math -->
+      <div class="picker-left">
+        <div class="pack-visual">
+          <img loading="lazy" decoding="async" id="pickerImg" src="images/roach-doctor-2pack.webp" alt="Roach Doctor">
+        </div>
+        <div class="pack-math" id="pickerMath">
+          <div class="math-row"><span>1 egység ára</span><span>10 990 Ft</span></div>
+          <div class="math-row" id="mathRow2"><span>+1 INGYENES egység</span><span style="color:#16884f">0 Ft</span></div>
+          <div class="math-total strike" id="mathStrike"><span>Normál ár</span><span>21 980 Ft</span></div>
+          <div class="math-total savings" id="mathSavings"><span>Te most fizetsz</span><span>10 990 Ft 🔥</span></div>
+        </div>
+      </div>
+      <!-- RIGHT: options -->
+      <div class="picker-options">
+        <!-- OFFER 1: Buy 1 Get 1 -->
+        <label class="pick-opt" id="opt-bogo"
+          data-product="Buy 1 Get 1 Free — 2 csomag"
+          data-units="2" data-price="10990"
+          data-img="images/roach-doctor-2pack.webp"
+          data-upsell-units="2" data-upsell-price="2990"
+          data-upsell-title="+2 extra csomag — csak 2 990 Ft"
+          data-upsell-copy="Gondolj a konyhára ÉS a fürdőszobára egyszerre. 2 extra csomag most szinte ingyen — ezt az árat utólag nem kapod meg."
+          data-math1="1 egység ára|10 990 Ft"
+          data-math2="+1 INGYENES egység|0 Ft"
+          data-strike="Normál ár|21 980 Ft"
+          data-savings="Te most fizetsz|10 990 Ft 🔥">
+          <input type="radio" name="pack" value="bogo">
+          <div class="pick-inner">
+            <img loading="lazy" decoding="async" class="pick-thumb" src="images/roach-doctor-2pack.webp" alt="2 csomag">
+            <div class="pick-info">
+              <span class="pick-name">🎁 Vegyél 1-et, Kapsz 1-et Ingyen</span>
+              <span class="pick-desc">2 egység — 1 szobás lakáshoz, első kezelés</span>
+              <span class="free-units">✅ 1 INGYENES egység</span>
+            </div>
+            <div class="pick-price-col">
+              <span class="pick-price-old">21 980 Ft</span>
+              <span class="pick-price-new">10 990 Ft</span>
+            </div>
+          </div>
+        </label>
+
+        <!-- OFFER 2: Buy 2 Get 3 — DEFAULT -->
+        <label class="pick-opt is-selected" id="opt-2g3"
+          data-product="Buy 2 Get 3 Free — 5 csomag"
+          data-units="5" data-price="13990"
+          data-img="images/roach-doctor-3pack.webp"
+          data-upsell-units="5" data-upsell-price="4990"
+          data-upsell-title="+5 extra csomag — csak 4 990 Ft"
+          data-upsell-copy="Az egész lakás + a szomszédnak is jut. 5 csomag most 4 990 Ft — darabonként kevesebb mint egy kávé. Ez az ajánlat lejár, amikor bezárod ezt az ablakot."
+          data-math1="2 egység ára|13 990 Ft"
+          data-math2="+3 INGYENES egység|0 Ft"
+          data-strike="Normál ár|54 950 Ft"
+          data-savings="Te most fizetsz|13 990 Ft 🔥">
+          <input type="radio" name="pack" value="2g3" checked>
+          <div class="pick-inner">
+            <img loading="lazy" decoding="async" class="pick-thumb" src="images/roach-doctor-3pack.webp" alt="5 csomag">
+            <div class="pick-info">
+              <span class="pick-name">🔥 Vegyél 2-t, Kapsz 3-at Ingyen</span>
+              <span class="pick-desc">5 egység — 2–3 szobás lakáshoz, teljes kezelés</span>
+              <span class="free-units">✅ 3 INGYENES egység</span>
+            </div>
+            <div class="pick-price-col">
+              <span class="pick-price-old">54 950 Ft</span>
+              <span class="pick-price-new">13 990 Ft</span>
+            </div>
+          </div>
+          <div class="bundle-badge">LEGNÉPSZERŰBB 🔥</div>
+        </label>
+
+        <!-- OFFER 3: Buy 3 Get 4 -->
+        <label class="pick-opt" id="opt-3g4"
+          data-product="Buy 3 Get 4 Free — 7 csomag"
+          data-units="7" data-price="16990"
+          data-img="images/roach-doctor-3pack.webp"
+          data-upsell-units="7" data-upsell-price="6990"
+          data-upsell-title="+7 extra csomag — csak 6 990 Ft"
+          data-upsell-copy="Te már komolyan vetted. Tedd teljessé — 7 extra csomag 6 990 Ft-ért. Kezeld az egész házat, add tovább a családnak. Egyszer fizetsz, örökre megoldod."
+          data-math1="3 egység ára|16 990 Ft"
+          data-math2="+4 INGYENES egység|0 Ft"
+          data-strike="Normál ár|76 930 Ft"
+          data-savings="Te most fizetsz|16 990 Ft 🔥">
+          <input type="radio" name="pack" value="3g4">
+          <div class="pick-inner">
+            <img loading="lazy" decoding="async" class="pick-thumb" src="images/roach-doctor-3pack.webp" alt="7 csomag">
+            <div class="pick-info">
+              <span class="pick-name">💎 Vegyél 3-at, Kapsz 4-et Ingyen</span>
+              <span class="pick-desc">7 egység — Nagy lakás + teljes ház kezelése</span>
+              <span class="free-units">✅ 4 INGYENES egység</span>
+            </div>
+            <div class="pick-price-col">
+              <span class="pick-price-old">76 930 Ft</span>
+              <span class="pick-price-new">16 990 Ft</span>
+            </div>
+          </div>
+          <div class="bundle-badge" style="background:var(--poison)">LEGJOBB ÉRTÉK 💎</div>
+        </label>
+
+        <div class="cta-wrap">
+          <button class="btn green-hot" id="pickerCta" data-scroll="#inlineForm">RENDELÉS LEADÁSA ↓</button>
+          <div class="paylines">
+            <div class="payline">📦 Diszkrét csomagolás — nem látható mi van benne</div>
+            <div class="payline">💳 Csak akkor fizetsz, amikor a csomag megérkezik</div>
+          </div>
+          <div class="urgency-note">⚠️ Korlátozott készlet — 2 000 csomag raktáron</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INLINE ORDER FORM -->
+    <div class="form-box fade" id="inlineForm">
+      <div class="proof-bar">🔥 <strong>847 rendelés</strong>&nbsp;az elmúlt 30 napban Magyarországon</div>
+      <div class="cdown-box">
+        <div class="cdown-label">⏰ Az akciós ár lejár:</div>
+        <div class="cdown-timer" id="countdownTimer">14:59</div>
+      </div>
+      <h3>Fejezd be a rendelésed</h3>
+      <p class="sub">Töltsd ki lent — gyors kiszállítás, fizetés átvételkor</p>
+      <div class="selected-box" id="selectedBox">
+        📦 Vegyél 2-t, Kapsz 3-at Ingyen — 5 egység
+        <span class="price" id="selectedPrice">13 990 Ft</span>
+      </div>
+      <form class="form-grid" id="orderForm">
+        <div class="field"><label>Teljes név</label><input name="name" required autocomplete="name" placeholder="Pl.: Kovács Péter"></div>
+        <div class="field"><label>Telefonszám</label><input name="phone" required inputmode="tel" autocomplete="tel" placeholder="Pl.: 06 30 123 4567"></div>
+        <div class="field"><label>Utca és házszám</label><input name="street" required autocomplete="street-address" placeholder="Pl.: Kossuth Lajos utca 12"></div>
+        <div class="field"><label>Város</label><input name="city" required autocomplete="address-level2" placeholder="Pl.: Budapest"></div>
+        <div class="field"><label>Irányítószám</label><input name="zip" required inputmode="numeric" autocomplete="postal-code" placeholder="Pl.: 1051"></div>
+        <div class="courier-line">🚚 Futárszállítás 1–3 munkanap — diszkrét csomagolás</div>
+        <button class="btn hot" type="submit">RENDELÉS MEGERŐSÍTÉSE (UTÁNVÉT) →</button>
+        <p class="form-note">✅ CSAK akkor fizetsz, amikor a csomag megérkezik. Semmi előre fizetés.</p>
+        <p class="form-note">📦 A külső csomagoláson nem látható a tartalom.</p>
+        <p class="form-note">📞 Telefonon keresni fogunk a rendelés megerősítéséhez.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section>
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">Valós vásárlói vélemények</p>
+      <h2>„Végre valami, <span class="grad">ami tényleg működik."</span></h2>
+    </div>
+    <div class="review-shell">
+      <div class="review-track fade" id="reviewTrack">
+        <article class="rev-card is-active">
+          <div class="rev-topline"><img decoding="async" class="rev-stars" src="images/result.webp" alt="5 csillag" style="width:96px;height:18px;object-fit:cover;object-position:top;border-radius:3px"><span class="rev-badge">Ellenőrzött vásárló</span></div>
+          <p>„Este elhelyeztem a sarokban. Reggel 4 döglött csótány a konyhában. Egy héttel később egy sem. Meglepő, de tényleg működik."</p>
+          <div class="rev-head"><div class="rev-avatar">KM</div><div><b>Kerekes Mária</b><div class="verified">✅ Budapest — Ellenőrzött vásárló</div></div></div>
+        </article>
+        <article class="rev-card">
+          <div class="rev-topline"><img decoding="async" class="rev-stars" src="images/result.webp" alt="5 csillag" style="width:96px;height:18px;object-fit:cover;object-position:top;border-radius:3px"><span class="rev-badge">Ellenőrzött vásárló</span></div>
+          <p>„Régi panelban lakunk. Évek óta probléma volt. Három csomag, három nap. Szomszédom azt kérdezi, mit csináltam. Ezt."</p>
+          <div class="rev-head"><div class="rev-avatar">TV</div><div><b>Tóth Vilmos</b><div class="verified">✅ Debrecen — Ellenőrzött vásárló</div></div></div>
+        </article>
+        <article class="rev-card">
+          <div class="rev-topline"><img decoding="async" class="rev-stars" src="images/result.webp" alt="5 csillag" style="width:96px;height:18px;object-fit:cover;object-position:top;border-radius:3px"><span class="rev-badge">Ellenőrzött vásárló</span></div>
+          <p>„Cicáink vannak, ezért aggódtam. De a gél célzottan dolgozik. A macskák nem érték el, a csótányok viszont azóta tűntek."</p>
+          <div class="rev-head"><div class="rev-avatar">SÉ</div><div><b>Szabó Éva</b><div class="verified">✅ Pécs — Ellenőrzött vásárló</div></div></div>
+        </article>
+        <article class="rev-card">
+          <div class="rev-topline"><img decoding="async" class="rev-stars" src="images/result.webp" alt="5 csillag" style="width:96px;height:18px;object-fit:cover;object-position:top;border-radius:3px"><span class="rev-badge">Ellenőrzött vásárló</span></div>
+          <p>„Spray-kel próbálkoztam évekig — mindig visszajöttek. A Roach Doctor az első, ami a fészket is megtámadta. Két hete csend van."</p>
+          <div class="rev-head"><div class="rev-avatar">BL</div><div><b>Balogh László</b><div class="verified">✅ Győr — Ellenőrzött vásárló</div></div></div>
+        </article>
+        <article class="rev-card">
+          <div class="rev-topline"><img decoding="async" class="rev-stars" src="images/result.webp" alt="5 csillag" style="width:96px;height:18px;object-fit:cover;object-position:top;border-radius:3px"><span class="rev-badge">Ellenőrzött vásárló</span></div>
+          <p>„Vendégházam van — csótány = katasztrófa. 48 óra alatt letisztult. Azóta kötelező darab a takarítószerek között."</p>
+          <div class="rev-head"><div class="rev-avatar">NH</div><div><b>Nagy Hajnalka</b><div class="verified">✅ Miskolc — Ellenőrzött vásárló</div></div></div>
+        </article>
+      </div>
+      <div class="rev-dots" id="revDots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="cream-sec">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">Miért a Roach Doctor?</p>
+      <h2>Spray? Csapda? <span class="grad">Ezek mind az egyedeket ölik.</span></h2>
+      <p class="lead">A spray elűzi őket — holnap visszajönnek. A Roach Doctor a fészket pusztítja. Ez a különbség egy átmeneti megkönnyebbülés és egy végleges megoldás között.</p>
+    </div>
+    <div class="why-grid fade">
+      <div class="why-card"><div class="ico">🔁</div><h3>Kaszkád hatás</h3><p>Egy érintett csótány megfertőzi az összeset. Te nem csinálsz semmit — a gél elvégzi a munkát helyetted.</p></div>
+      <div class="why-card"><div class="ico">🥚</div><h3>Tojásirtás</h3><p>A következő generáció sem kel ki. Nem visszatérő probléma — végleges megoldás.</p></div>
+      <div class="why-card"><div class="ico">💧</div><h3>Célzott alkalmazás</h3><p>Apró pöttyök a problémás helyekre. Nem kell elhagyni a lakást, nem kell vegyi köd.</p></div>
+      <div class="why-card"><div class="ico">⚡</div><h3>24 óra alatt látható</h3><p>Nem hetes kísérletezés. Reggel már érzed a különbséget — vagy visszafizetjük.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="research">
+  <div class="wrap cmp-wrap">
+    <div>
+      <p class="eyebrow">Összehasonlítás</p>
+      <h2>Roach Doctor <span class="grad">vs. minden más.</span></h2>
+      <p class="lead" style="margin-left:0">Nem minden módszer egyforma. A különbség egyszerű: az egyedet ölöd, vagy a fészket?</p>
+    </div>
+    <div class="cmp-stage">
+      <div class="cmp-slider" id="cmpSlider">
+        <article class="cmp-card snap is-active">
+          <div class="cmp-head">🪳 Roach Doctor Gél</div>
+          <div class="cmp-row"><div class="cmp-label">🎯 Hatásmechanizmus</div><div class="cmp-val">✅ Kaszkád — teljes fészekirtás</div></div>
+          <div class="cmp-row"><div class="cmp-label">🥚 Tojásirtás</div><div class="cmp-val">✅ Igen — új generáció sem kel ki</div></div>
+          <div class="cmp-row"><div class="cmp-label">⏱ Eredmény</div><div class="cmp-val">✅ 24 órán belül látható</div></div>
+          <div class="cmp-row"><div class="cmp-label">🏠 Alkalmazás</div><div class="cmp-val">✅ Célzott — nem kell elhagyni a lakást</div></div>
+          <div class="cmp-row"><div class="cmp-label">🔄 Visszatérés</div><div class="cmp-val">✅ Minimális — fészek elpusztul</div></div>
+        </article>
+        <article class="cmp-card">
+          <div class="cmp-head">💨 Spray / Csapda</div>
+          <div class="cmp-row"><div class="cmp-label">🎯 Hatásmechanizmus</div><div class="cmp-val">❌ Egyedirtás — fészek megmarad</div></div>
+          <div class="cmp-row"><div class="cmp-label">🥚 Tojásirtás</div><div class="cmp-val">❌ Nem — újabb generáció kel ki</div></div>
+          <div class="cmp-row"><div class="cmp-label">⏱ Eredmény</div><div class="cmp-val">❌ Átmeneti — 1–2 héten belül visszajönnek</div></div>
+          <div class="cmp-row"><div class="cmp-label">🏠 Alkalmazás</div><div class="cmp-val">❌ Párásítás — el kell hagyni a lakást</div></div>
+          <div class="cmp-row"><div class="cmp-label">🔄 Visszatérés</div><div class="cmp-val">❌ Valószínű — újra és újra</div></div>
+        </article>
+      </div>
+      <div class="cmp-dots"><span class="dot active" id="cdot1"></span><span class="dot" id="cdot2"></span></div>
+      <div class="cmp-hint">← Húzd el az összehasonlításhoz →</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="dark-sec">
+  <div class="wrap final-grid">
+    <div class="final-img fade">
+      <img loading="lazy" decoding="async" src="images/roach-doctor-3pack.webp" alt="Roach Doctor csomag" style="border-radius:22px">
+    </div>
+    <div class="fade">
+      <p class="eyebrow">Döntsd el most</p>
+      <h2 style="color:#fff">Meddig tűröd még? <span class="grad">Ma éjjel megoldható.</span></h2>
+      <p style="color:rgba(255,255,255,.65);font-size:16px;line-height:1.6;margin:0 0 20px">Minden nap, amit vársz, a fészek növekszik. Egy este, 5 perc munkával — és reggel más lesz a helyzet. Vagy visszaadjuk a pénzed.</p>
+      <div class="checks">
+        <div class="chk">✅ Kaszkád hatás</div>
+        <div class="chk">✅ Tojásirtás</div>
+        <div class="chk">✅ 24 óra</div>
+        <div class="chk">✅ Célzott kezelés</div>
+        <div class="chk">✅ Nincs vegyi köd</div>
+        <div class="chk">✅ Diszkrét csomag</div>
+      </div>
+      <button class="btn green-hot" data-scroll="#inlineForm">RENDELEM A ROACH DOCTORT MOST →</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand"><span>🪳</span> ROACH DOCTOR</div>
+    <a class="privacy" href="#">Adatvédelmi irányelvek</a>
+    <p class="disc">© 2025 Roach Doctor. Minden jog fenntartva. Az eredmények egyénenként eltérhetnek. A terméket a csomagoláson feltüntetett útmutató szerint kell használni.</p>
+  </div>
+</footer>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <button class="btn green-hot" data-scroll="#inlineForm">KÉREM A ROACH DOCTORT — UTÁNVÉTTEL →</button>
+</div>
+
+<!-- UPSELL MODAL -->
+<div class="upsell-overlay" id="upsellOverlay">
+  <div class="upsell-box">
+    <div class="upsell-header">
+      <h2 id="upsellTitle">⚡ Mielőtt elküldjük a rendelést…</h2>
+      <p id="upsellCopy">Az egész lakás + a szomszédnak is jut. 5 csomag most 4 990 Ft-ért.</p>
+    </div>
+    <div class="upsell-offer-card">
+      <img loading="lazy" decoding="async" class="upsell-img" src="images/roach-doctor-3pack.webp" alt="Roach Doctor">
+      <h3 id="upsellOfferTitle">+5 extra csomag — csak 4 990 Ft</h3>
+      <div class="upsell-price-row">
+        <span class="upsell-old" id="upsellOldPrice">24 950 Ft</span>
+        <span class="upsell-new" id="upsellNewPrice">4 990 Ft</span>
+        <div class="upsell-per" id="upsellPer">~998 Ft / egység — kevesebb mint egy kávé</div>
+      </div>
+      <div class="upsell-reason" id="upsellReason">
+        💡 <strong>Miért éri meg?</strong><br>
+        Az egész lakás + a szomszédnak is jut. 5 csomag most 4 990 Ft — darabonként kevesebb mint egy kávé. Ez az ajánlat lejár, amikor bezárod ezt az ablakot.
+      </div>
+      <div class="upsell-summary" id="upsellSummary">
+        Mai rendelésed: 5 egység = 13 990 Ft<br>
+        Most hozzáadva: +5 egység csak 4 990 Ft<br>
+        <span style="color:var(--danger)">Összesen: 18 980 Ft utánvéttel</span>
+      </div>
+      <button class="btn hot" id="yesUpsell" style="font-size:16px;min-height:58px">IGEN — KÉREM AZ EXTRA CSOMAGOT →</button>
+    </div>
+    <span class="no-link" id="noUpsell">Nem kérem a kedvezményt, maradok a jelenlegi csomagnál.</span>
+  </div>
+</div>
+
+<!-- THANK YOU -->
+<div class="thankyou-overlay" id="thankyouOverlay">
+  <div class="thank-card">
+    <div class="big-check">✅</div>
+    <h2>Rendelés fogadva!</h2>
+    <p>Köszönjük! Csapatunk hamarosan telefonon keresni fog a rendelés megerősítéséhez.<br><strong>Fizetés csak a csomag átvételekor.</strong></p>
+    <button class="btn" style="background:var(--poison);width:100%" onclick="location.reload()">Vissza az oldalra</button>
+  </div>
+</div>
+
+<script>
+// ── CONFIG ──
+const SKU = 'PMLD-1111';
+const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwfJJQ_HJpJp5j7jM5Pri9MlsPxdwNa2qaeteKTINJLMIpTs94cjix1e-eVIZCRIpHerg/exec';
+
+// ── STATE ──
+let order = {
+  name:'', phone:'', street:'', city:'', zip:'',
+  product:'Buy 2 Get 3 Free — 5 csomag',
+  units: 5, price: 13990,
+  upsell: false, upsellUnits: 0, upsellPrice: 0, totalPrice: 13990,
+  event_id: ''
+};
+let selectedOpt = document.getElementById('opt-2g3');
+let orderSubmitted = false, orderFinalized = false;
+let purchaseFiredTT = false, purchaseFiredMeta = false;
+let upsellFallbackTimer = null;
+
+const floatingNav = document.getElementById('floatingNav');
+const stickyCta = document.getElementById('stickyCta');
+const upsellOverlay = document.getElementById('upsellOverlay');
+const thankyouOverlay = document.getElementById('thankyouOverlay');
+const pickerImg = document.getElementById('pickerImg');
+const pickerMath = document.getElementById('pickerMath');
+const selectedBox = document.getElementById('selectedBox');
+const selectedPrice = document.getElementById('selectedPrice');
+
+// ── NAV SCROLL ──
+let lastY = window.scrollY;
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y < 44) { floatingNav.classList.remove('hidden','is-glass'); stickyCta.classList.remove('show'); lastY = y; return; }
+  stickyCta.classList.add('show');
+  if (y > lastY + 8) { floatingNav.classList.add('hidden'); floatingNav.classList.remove('is-glass'); }
+  else if (y < lastY - 4) { floatingNav.classList.remove('hidden'); floatingNav.classList.add('is-glass'); }
+  lastY = y;
+}, { passive: true });
+
+// ── SMOOTH SCROLL ──
+document.querySelectorAll('[data-scroll]').forEach(b => b.addEventListener('click', () => {
+  const t = document.querySelector(b.dataset.scroll);
+  if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}));
+
+// ── COUNTDOWN ──
+(function() {
+  const el = document.getElementById('countdownTimer');
+  if (!el) return;
+  const key = 'roach_cd_end';
+  let end = sessionStorage.getItem(key);
+  if (!end) { end = Date.now() + 15 * 60 * 1000; sessionStorage.setItem(key, end); }
+  end = Number(end);
+  function tick() {
+    const left = Math.max(0, end - Date.now());
+    const m = Math.floor(left / 60000), s = Math.floor((left % 60000) / 1000);
+    el.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+    if (left > 0) setTimeout(tick, 1000);
+  }
+  tick();
+})();
+
+// ── PICKER ──
+function updateMathBox(opt) {
+  const [l1, v1] = opt.dataset.math1.split('|');
+  const [l2, v2] = opt.dataset.math2.split('|');
+  const [ls, vs] = opt.dataset.strike.split('|');
+  const [lsv, vsv] = opt.dataset.savings.split('|');
+  pickerMath.innerHTML = `
+    <div class="math-row"><span>${l1}</span><span>${v1}</span></div>
+    <div class="math-row"><span>${l2}</span><span style="color:#16884f">${v2}</span></div>
+    <div class="math-total strike"><span>${ls}</span><span>${vs}</span></div>
+    <div class="math-total savings"><span>${lsv}</span><span>${vsv}</span></div>
+  `;
+}
+
+function selectOffer(opt) {
+  document.querySelectorAll('.pick-opt').forEach(o => o.classList.remove('is-selected'));
+  opt.classList.add('is-selected');
+  selectedOpt = opt;
+  order.product = opt.dataset.product;
+  order.units = Number(opt.dataset.units);
+  order.price = Number(opt.dataset.price);
+  order.totalPrice = order.price;
+  order.upsell = false; order.upsellUnits = 0; order.upsellPrice = 0;
+
+  // Update picker image
+  const img = opt.dataset.img;
+  pickerImg.style.opacity = '0';
+  setTimeout(() => { pickerImg.src = img; pickerImg.style.opacity = '1'; }, 180);
+
+  // Update math box
+  updateMathBox(opt);
+
+  // Update selected box in form
+  const name = opt.querySelector('.pick-name').textContent;
+  selectedBox.innerHTML = `📦 ${name} — ${order.units} egység<span class="price" id="selectedPrice">${order.price.toLocaleString('hu-HU')} Ft</span>`;
+}
+
+document.querySelectorAll('.pick-opt').forEach(opt => {
+  opt.addEventListener('click', () => selectOffer(opt));
+});
+// init with default
+selectOffer(document.getElementById('opt-2g3'));
+
+// ── UPSELL CONTENT UPDATE ──
+function updateUpsellModal() {
+  const opt = selectedOpt;
+  const uTitle = opt.dataset.upsellTitle;
+  const uCopy = opt.dataset.upsellCopy;
+  const uUnits = Number(opt.dataset.upsellUnits);
+  const uPrice = Number(opt.dataset.upsellPrice);
+  const normalUpsellPrice = uUnits * 10990;
+  const perUnit = Math.round(uPrice / uUnits);
+  const totalWithUpsell = order.price + uPrice;
+
+  order.upsellUnits = uUnits;
+  order.upsellPrice = uPrice;
+
+  document.getElementById('upsellTitle').textContent = '⚡ Mielőtt elküldjük a rendelést…';
+  document.getElementById('upsellCopy').textContent = uCopy;
+  document.getElementById('upsellOfferTitle').textContent = uTitle;
+  document.getElementById('upsellOldPrice').textContent = normalUpsellPrice.toLocaleString('hu-HU') + ' Ft';
+  document.getElementById('upsellNewPrice').textContent = uPrice.toLocaleString('hu-HU') + ' Ft';
+  document.getElementById('upsellPer').textContent = `~${perUnit.toLocaleString('hu-HU')} Ft / egység — kevesebb mint egy kávé`;
+  document.getElementById('upsellReason').innerHTML = `💡 <strong>Miért éri meg?</strong><br>${uCopy}`;
+  document.getElementById('upsellSummary').innerHTML = `
+    Mai rendelésed: ${order.units} egység = ${order.price.toLocaleString('hu-HU')} Ft<br>
+    Most hozzáadva: +${uUnits} egység csak ${uPrice.toLocaleString('hu-HU')} Ft<br>
+    <span style="color:var(--danger)">Összesen: ${totalWithUpsell.toLocaleString('hu-HU')} Ft utánvéttel</span>
+  `;
+  document.getElementById('yesUpsell').textContent = `IGEN — KÉREM A +${uUnits} EXTRA CSOMAGOT →`;
+}
+
+// ── PIXEL HELPERS ──
+function getEventId() {
+  if (!order.event_id) order.event_id = 'purchase_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+  return order.event_id;
+}
+function normalizePhone(p) { return String(p || '').replace(/\D/g, ''); }
+function dedupKey(p) { return 'roach_hu_ph_' + normalizePhone(p); }
+function alreadyFired(p) { return !!localStorage.getItem(dedupKey(p)); }
+function markFired(p, eid) { localStorage.setItem(dedupKey(p), JSON.stringify({ event_id: eid, time: new Date().toISOString() })); }
+
+function getUtm() {
+  const p = new URLSearchParams(window.location.search);
+  return {
+    utm_source: p.get('utm_source') || '', utm_medium: p.get('utm_medium') || '',
+    utm_campaign: p.get('utm_campaign') || '', utm_content: p.get('utm_content') || '',
+    utm_term: p.get('utm_term') || '', campaign_id: p.get('campaign_id') || '',
+    adset_id: p.get('adset_id') || '', ad_id: p.get('ad_id') || ''
+  };
+}
+function getDevice() { return /Mobi|Android|iPhone|iPad/.test(navigator.userAgent) ? 'mobile' : 'desktop'; }
+
+function buildPayload() {
+  order.totalPrice = order.price + (order.upsell ? order.upsellPrice : 0);
+  const eid = getEventId();
+  const utm = getUtm();
+  return {
+    sku: SKU,
+    event_id: eid,
+    is_duplicate: alreadyFired(order.phone),
+    price: order.totalPrice,
+    customer_name: order.name,
+    customer_phone: order.phone,
+    city: order.city,
+    zip_code: order.zip,
+    customer_address: order.street,
+    customer_email: '',
+    quantity: order.units + (order.upsell ? order.upsellUnits : 0),
+    note: `Product: ${order.product} | Price: ${order.price} Ft | Upsell: ${order.upsell ? 'yes +' + order.upsellPrice + ' Ft (+' + order.upsellUnits + ' units)' : 'no'} | Source: roach-doctor-hu | Device: ${getDevice()} | ${utm.utm_source ? 'utm_source:' + utm.utm_source : ''}`,
+    utm_source: utm.utm_source, utm_medium: utm.utm_medium,
+    utm_campaign: utm.utm_campaign, utm_content: utm.utm_content,
+    utm_term: utm.utm_term, campaign_id: utm.campaign_id,
+    adset_id: utm.adset_id, ad_id: utm.ad_id,
+    device: getDevice(), user_agent: navigator.userAgent,
+    date: new Date().toISOString()
+  };
+}
+
+function sendToSheet(payload, beacon) {
+  const body = JSON.stringify(payload);
+  if (beacon && navigator.sendBeacon) {
+    try { navigator.sendBeacon(WEBHOOK_URL, new Blob([body], { type: 'text/plain;charset=utf-8' })); return; } catch (e) {}
+  }
+  fetch(WEBHOOK_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body }).catch(e => console.error('Sheet:', e));
+}
+
+function firePurchasePixels(payload) {
+  if (!purchaseFiredTT && typeof ttq !== 'undefined') {
+    purchaseFiredTT = true;
+    ttq.track('PlaceAnOrder', {
+      content_type: 'product', content_id: SKU,
+      content_name: order.product, quantity: payload.quantity,
+      value: payload.price, currency: 'HUF'
+    });
+  }
+  if (!purchaseFiredMeta && typeof fbq !== 'undefined') {
+    purchaseFiredMeta = true;
+    fbq('track', 'Purchase', {
+      content_type: 'product', content_ids: [SKU],
+      content_name: order.product, num_items: payload.quantity,
+      value: payload.price, currency: 'HUF'
+    }, { eventID: payload.event_id });
+  }
+}
+
+function finalizeOrder(beacon) {
+  if (orderFinalized) return;
+  orderFinalized = true;
+  if (upsellFallbackTimer) clearTimeout(upsellFallbackTimer);
+  const payload = buildPayload();
+  console.log('ROACH DOCTOR ORDER', payload);
+  sendToSheet(payload, beacon);
+  if (!alreadyFired(order.phone)) {
+    firePurchasePixels(payload);
+    markFired(order.phone, payload.event_id);
+  } else {
+    console.log('Duplicate blocked:', order.phone);
+  }
+}
+
+function fireOrder() {
+  finalizeOrder(false);
+  upsellOverlay.classList.remove('show');
+  thankyouOverlay.classList.add('show');
+}
+
+// ── FORM SUBMIT ──
+document.getElementById('orderForm').addEventListener('submit', e => {
+  e.preventDefault();
+  if (orderSubmitted) return;
+  orderSubmitted = true;
+  const btn = e.target.querySelector('button[type="submit"]');
+  if (btn) btn.disabled = true;
+  const fd = new FormData(e.target);
+  order.name = fd.get('name').trim();
+  order.phone = fd.get('phone').trim();
+  order.street = fd.get('street').trim();
+  order.city = fd.get('city').trim();
+  order.zip = fd.get('zip').trim();
+  order.upsell = false;
+  updateUpsellModal();
+  upsellOverlay.classList.add('show');
+  upsellFallbackTimer = setTimeout(() => {
+    if (!orderFinalized && upsellOverlay.classList.contains('show')) fireOrder();
+  }, 30000);
+});
+
+document.getElementById('yesUpsell').addEventListener('click', () => {
+  order.upsell = true;
+  fireOrder();
+});
+document.getElementById('noUpsell').addEventListener('click', () => {
+  order.upsell = false;
+  order.upsellPrice = 0;
+  fireOrder();
+});
+
+window.addEventListener('pagehide', () => {
+  if (!orderFinalized && upsellOverlay.classList.contains('show')) {
+    order.upsell = false; order.upsellPrice = 0;
+    finalizeOrder(true);
+  }
+});
+
+// ── COMPARE SLIDER ──
+const cmpSlider = document.getElementById('cmpSlider');
+const cmpCards = [...cmpSlider.querySelectorAll('.cmp-card')];
+const cdot1 = document.getElementById('cdot1'), cdot2 = document.getElementById('cdot2');
+function updateCmp() {
+  const center = cmpSlider.scrollLeft + cmpSlider.clientWidth / 2;
+  let active = 0, best = 1e9;
+  cmpCards.forEach((c, i) => { const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - center); if (d < best) { best = d; active = i; } });
+  cmpCards.forEach((c, i) => c.classList.toggle('is-active', i === active));
+  cdot1.classList.toggle('active', active === 0);
+  cdot2.classList.toggle('active', active === 1);
+}
+cmpSlider.addEventListener('scroll', () => requestAnimationFrame(updateCmp), { passive: true });
+setTimeout(updateCmp, 80);
+
+// ── REVIEWS ──
+const reviewTrack = document.getElementById('reviewTrack');
+const revDots = [...document.querySelectorAll('#revDots .dot')];
+const revCards = [...document.querySelectorAll('.rev-card')];
+function updateReviews() {
+  if (!reviewTrack) return;
+  const center = reviewTrack.scrollLeft + reviewTrack.clientWidth / 2;
+  let active = 0, best = 1e9;
+  revCards.forEach((c, i) => { const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - center); if (d < best) { best = d; active = i; } });
+  revCards.forEach((c, i) => c.classList.toggle('is-active', i === active));
+  revDots.forEach((d, i) => d.classList.toggle('active', i === active));
+}
+if (reviewTrack) {
+  reviewTrack.addEventListener('scroll', () => requestAnimationFrame(updateReviews), { passive: true });
+  revDots.forEach((d, i) => d.addEventListener('click', () => revCards[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })));
+  setTimeout(updateReviews, 80);
+}
+
+// ── FADE OBSERVER ──
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }), { threshold: .1 });
+document.querySelectorAll('.fade').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
