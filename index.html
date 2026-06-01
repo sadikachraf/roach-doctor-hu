@@ -54,7 +54,7 @@ button,input{font-family:inherit}
 .hero-content{position:relative;z-index:2;min-height:500px;display:flex;align-items:center}
 .hero-copy{max-width:600px;padding:50px 0 54px}
 .stars-row{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.stars-img{width:110px}
+.stars-img{font-size:20px;letter-spacing:2px;line-height:1;margin-bottom:2px}
 .stars-count{color:rgba(255,255,255,.75);font-size:13px;font-weight:800}
 .badge-top{display:inline-flex;align-items:center;gap:6px;background:rgba(217,45,32,.22);border:1px solid rgba(217,45,32,.5);border-radius:999px;padding:7px 14px;font-size:12px;font-weight:900;color:#ff7a6a;margin-bottom:16px}
 .hero h1{font-size:clamp(32px,4.8vw,58px);line-height:.96;letter-spacing:-.055em;margin:0 0 18px;font-weight:900;color:#fff}
@@ -159,7 +159,7 @@ h2{font-size:clamp(29px,3.8vw,46px);line-height:1.02;letter-spacing:-.05em;margi
 .rev-card.is-active{border-color:#b8ddb2;box-shadow:0 22px 54px rgba(35,122,50,.12);transform:scale(1);opacity:1}
 .rev-card:not(.is-active){transform:scale(.94);opacity:.65}
 .rev-card::before{content:'"';position:absolute;right:16px;top:6px;font-size:78px;font-weight:900;color:rgba(35,122,50,.06);line-height:1}
-.rev-stars{width:96px;margin:0 0 10px}
+.rev-stars{font-size:16px;letter-spacing:1px;margin:0 0 10px;line-height:1}
 .rev-card p{font-size:14px;line-height:1.56;color:#4a5c4a;margin:0}
 .rev-head{display:flex;align-items:center;gap:11px;margin-top:14px}
 .rev-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#0d1810,#237a32);color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -350,7 +350,7 @@ else{window.addEventListener('load',function(){setTimeout(window.__loadPixels,70
     <div class="hero-copy fade">
       <div class="badge-top">⚠️ Korlátozott készlet — 2 000 csomag raktáron</div>
       <div class="stars-row">
-        <img decoding="async" class="stars-img" src="images/result.webp" alt="5 csillag" style="width:110px;height:22px;object-fit:cover;object-position:top;border-radius:4px">
+        <div class="stars-img" aria-label="5 csillag">⭐⭐⭐⭐⭐</div>
         <span class="stars-count">4.9/5 • 1 200+ vélemény</span>
       </div>
       <h1>Csótány a lakásban?<br><span class="red">Ma éjjel vége.</span><br><em>Garantáltan.</em></h1>
@@ -457,7 +457,7 @@ else{window.addEventListener('load',function(){setTimeout(window.__loadPixels,70
       <!-- LEFT: visual + math -->
       <div class="picker-left">
         <div class="pack-visual">
-          <img loading="lazy" decoding="async" id="pickerImg" src="images/roach-doctor-2pack.webp" alt="Roach Doctor">
+          <img loading="lazy" decoding="async" id="pickerImg" src="images/offer-bogo.webp" alt="Roach Doctor">
         </div>
         <div class="pack-math" id="pickerMath">
           <div class="math-row"><span>1 egység ára</span><span>10 990 Ft</span></div>
@@ -472,8 +472,7 @@ else{window.addEventListener('load',function(){setTimeout(window.__loadPixels,70
         <label class="pick-opt" id="opt-bogo"
           data-product="Buy 1 Get 1 Free — 2 csomag"
           data-units="2" data-price="10990"
-          data-img="images/roach-doctor-2pack.webp"
-          data-upsell-units="2" data-upsell-price="2990"
+          data-img="images/offer-bogo.webp"
           data-upsell-title="+2 extra csomag — csak 2 990 Ft"
           data-upsell-copy="Gondolj a konyhára ÉS a fürdőszobára egyszerre. 2 extra csomag most szinte ingyen — ezt az árat utólag nem kapod meg."
           data-math1="1 egység ára|10 990 Ft"
@@ -482,7 +481,7 @@ else{window.addEventListener('load',function(){setTimeout(window.__loadPixels,70
           data-savings="Te most fizetsz|10 990 Ft 🔥">
           <input type="radio" name="pack" value="bogo">
           <div class="pick-inner">
-            <img loading="lazy" decoding="async" class="pick-thumb" src="images/roach-doctor-2pack.webp" alt="2 csomag">
+            <img loading="lazy" decoding="async" class="pick-thumb" src="images/offer-bogo.webp" alt="Buy 1 Get 1">
             <div class="pick-info">
               <span class="pick-name">🎁 Vegyél 1-et, Kapsz 1-et Ingyen</span>
               <span class="pick-desc">2 egység — 1 szobás lakáshoz, első kezelés</span>
@@ -499,7 +498,7 @@ else{window.addEventListener('load',function(){setTimeout(window.__loadPixels,70
         <label class="pick-opt is-selected" id="opt-2g3"
           data-product="Buy 2 Get 3 Free — 5 csomag"
           data-units="5" data-price="13990"
-          data-img="images/roach-doctor-3pack.webp"
+          data-img="images/offer-2g3.webp"
           data-upsell-units="5" data-upsell-price="4990"
           data-upsell-title="+5 extra csomag — csak 4 990 Ft"
           data-upsell-copy="Az egész lakás + a szomszédnak is jut. 5 csomag most 4 990 Ft — darabonként kevesebb mint egy kávé. Ez az ajánlat lejár, amikor bezárod ezt az ablakot."
@@ -509,7 +508,7 @@ else{window.addEventListener('load',function(){setTimeout(window.__loadPixels,70
           data-savings="Te most fizetsz|13 990 Ft 🔥">
           <input type="radio" name="pack" value="2g3" checked>
           <div class="pick-inner">
-            <img loading="lazy" decoding="async" class="pick-thumb" src="images/roach-doctor-3pack.webp" alt="5 csomag">
+            <img loading="lazy" decoding="async" class="pick-thumb" src="images/offer-2g3.webp" alt="5 csomag">
             <div class="pick-info">
               <span class="pick-name">🔥 Vegyél 2-t, Kapsz 3-at Ingyen</span>
               <span class="pick-desc">5 egység — 2–3 szobás lakáshoz, teljes kezelés</span>
@@ -527,7 +526,7 @@ else{window.addEventListener('load',function(){setTimeout(window.__loadPixels,70
         <label class="pick-opt" id="opt-3g4"
           data-product="Buy 3 Get 4 Free — 7 csomag"
           data-units="7" data-price="16990"
-          data-img="images/roach-doctor-3pack.webp"
+          data-img="images/offer-3g4.webp"
           data-upsell-units="7" data-upsell-price="6990"
           data-upsell-title="+7 extra csomag — csak 6 990 Ft"
           data-upsell-copy="Te már komolyan vetted. Tedd teljessé — 7 extra csomag 6 990 Ft-ért. Kezeld az egész házat, add tovább a családnak. Egyszer fizetsz, örökre megoldod."
@@ -537,7 +536,7 @@ else{window.addEventListener('load',function(){setTimeout(window.__loadPixels,70
           data-savings="Te most fizetsz|16 990 Ft 🔥">
           <input type="radio" name="pack" value="3g4">
           <div class="pick-inner">
-            <img loading="lazy" decoding="async" class="pick-thumb" src="images/roach-doctor-3pack.webp" alt="7 csomag">
+            <img loading="lazy" decoding="async" class="pick-thumb" src="images/offer-3g4.webp" alt="7 csomag">
             <div class="pick-info">
               <span class="pick-name">💎 Vegyél 3-at, Kapsz 4-et Ingyen</span>
               <span class="pick-desc">7 egység — Nagy lakás + teljes ház kezelése</span>
@@ -601,27 +600,27 @@ else{window.addEventListener('load',function(){setTimeout(window.__loadPixels,70
     <div class="review-shell">
       <div class="review-track fade" id="reviewTrack">
         <article class="rev-card is-active">
-          <div class="rev-topline"><img decoding="async" class="rev-stars" src="images/result.webp" alt="5 csillag" style="width:96px;height:18px;object-fit:cover;object-position:top;border-radius:3px"><span class="rev-badge">Ellenőrzött vásárló</span></div>
+          <div class="rev-topline"><div class="rev-stars" aria-label="5 csillag">⭐⭐⭐⭐⭐</div><span class="rev-badge">Ellenőrzött vásárló</span></div>
           <p>„Este elhelyeztem a sarokban. Reggel 4 döglött csótány a konyhában. Egy héttel később egy sem. Meglepő, de tényleg működik."</p>
           <div class="rev-head"><div class="rev-avatar">KM</div><div><b>Kerekes Mária</b><div class="verified">✅ Budapest — Ellenőrzött vásárló</div></div></div>
         </article>
         <article class="rev-card">
-          <div class="rev-topline"><img decoding="async" class="rev-stars" src="images/result.webp" alt="5 csillag" style="width:96px;height:18px;object-fit:cover;object-position:top;border-radius:3px"><span class="rev-badge">Ellenőrzött vásárló</span></div>
+          <div class="rev-topline"><div class="rev-stars" aria-label="5 csillag">⭐⭐⭐⭐⭐</div><span class="rev-badge">Ellenőrzött vásárló</span></div>
           <p>„Régi panelban lakunk. Évek óta probléma volt. Három csomag, három nap. Szomszédom azt kérdezi, mit csináltam. Ezt."</p>
           <div class="rev-head"><div class="rev-avatar">TV</div><div><b>Tóth Vilmos</b><div class="verified">✅ Debrecen — Ellenőrzött vásárló</div></div></div>
         </article>
         <article class="rev-card">
-          <div class="rev-topline"><img decoding="async" class="rev-stars" src="images/result.webp" alt="5 csillag" style="width:96px;height:18px;object-fit:cover;object-position:top;border-radius:3px"><span class="rev-badge">Ellenőrzött vásárló</span></div>
+          <div class="rev-topline"><div class="rev-stars" aria-label="5 csillag">⭐⭐⭐⭐⭐</div><span class="rev-badge">Ellenőrzött vásárló</span></div>
           <p>„Cicáink vannak, ezért aggódtam. De a gél célzottan dolgozik. A macskák nem érték el, a csótányok viszont azóta tűntek."</p>
           <div class="rev-head"><div class="rev-avatar">SÉ</div><div><b>Szabó Éva</b><div class="verified">✅ Pécs — Ellenőrzött vásárló</div></div></div>
         </article>
         <article class="rev-card">
-          <div class="rev-topline"><img decoding="async" class="rev-stars" src="images/result.webp" alt="5 csillag" style="width:96px;height:18px;object-fit:cover;object-position:top;border-radius:3px"><span class="rev-badge">Ellenőrzött vásárló</span></div>
+          <div class="rev-topline"><div class="rev-stars" aria-label="5 csillag">⭐⭐⭐⭐⭐</div><span class="rev-badge">Ellenőrzött vásárló</span></div>
           <p>„Spray-kel próbálkoztam évekig — mindig visszajöttek. A Roach Doctor az első, ami a fészket is megtámadta. Két hete csend van."</p>
           <div class="rev-head"><div class="rev-avatar">BL</div><div><b>Balogh László</b><div class="verified">✅ Győr — Ellenőrzött vásárló</div></div></div>
         </article>
         <article class="rev-card">
-          <div class="rev-topline"><img decoding="async" class="rev-stars" src="images/result.webp" alt="5 csillag" style="width:96px;height:18px;object-fit:cover;object-position:top;border-radius:3px"><span class="rev-badge">Ellenőrzött vásárló</span></div>
+          <div class="rev-topline"><div class="rev-stars" aria-label="5 csillag">⭐⭐⭐⭐⭐</div><span class="rev-badge">Ellenőrzött vásárló</span></div>
           <p>„Vendégházam van — csótány = katasztrófa. 48 óra alatt letisztult. Azóta kötelező darab a takarítószerek között."</p>
           <div class="rev-head"><div class="rev-avatar">NH</div><div><b>Nagy Hajnalka</b><div class="verified">✅ Miskolc — Ellenőrzött vásárló</div></div></div>
         </article>
@@ -685,7 +684,7 @@ else{window.addEventListener('load',function(){setTimeout(window.__loadPixels,70
 <section class="dark-sec">
   <div class="wrap final-grid">
     <div class="final-img fade">
-      <img loading="lazy" decoding="async" src="images/roach-doctor-3pack.webp" alt="Roach Doctor csomag" style="border-radius:22px">
+      <img loading="lazy" decoding="async" src="images/offer-3g4.webp" alt="Roach Doctor csomag" style="border-radius:22px">
     </div>
     <div class="fade">
       <p class="eyebrow">Döntsd el most</p>
@@ -725,7 +724,7 @@ else{window.addEventListener('load',function(){setTimeout(window.__loadPixels,70
       <p id="upsellCopy">Az egész lakás + a szomszédnak is jut. 5 csomag most 4 990 Ft-ért.</p>
     </div>
     <div class="upsell-offer-card">
-      <img loading="lazy" decoding="async" class="upsell-img" src="images/roach-doctor-3pack.webp" alt="Roach Doctor">
+      <img loading="lazy" decoding="async" class="upsell-img" src="images/offer-upsell.webp" alt="Roach Doctor">
       <h3 id="upsellOfferTitle">+5 extra csomag — csak 4 990 Ft</h3>
       <div class="upsell-price-row">
         <span class="upsell-old" id="upsellOldPrice">24 950 Ft</span>
