@@ -865,30 +865,40 @@ document.querySelectorAll('.pick-opt').forEach(opt => {
 // init with default
 selectOffer(document.getElementById('opt-2g3'));
 
-// ── UPSELL CONTENT UPDATE ──
+// ── UPSELL CONFIG — hardcoded per offer value ──
+const UPSELL_CONFIG = {
+  'bogo':  { units: 2, price: 2990,  copy: 'Gondolj a konyhára ÉS a fürdőszobára egyszerre. 2 extra csomag most szinte ingyen — ezt az árat utólag nem kapod meg.' },
+  '2g3':   { units: 5, price: 4990,  copy: 'Az egész lakás + a szomszédnak is jut. 5 csomag most 4 990 Ft — darabonként kevesebb mint egy kávé. Ez az ajánlat lejár, amikor bezárod ezt az ablakot.' },
+  '3g4':   { units: 7, price: 6990,  copy: 'Te már komolyan vetted. Tedd teljessé — 7 extra csomag 6 990 Ft-ért. Kezeld az egész házat, add tovább a családnak. Egyszer fizetsz, örökre megoldod.' }
+};
+
 function updateUpsellModal() {
-  const opt = selectedOpt || document.getElementById('opt-2g3');
-  if (!opt) return;
-  const uTitle = opt.dataset.upsellTitle || '';
-  const uCopy = opt.dataset.upsellCopy || '';
-  const uUnits = Number(opt.dataset.upsellUnits) || 0;
-  const uPrice = Number(opt.dataset.upsellPrice) || 0;
+  // Get currently selected offer value
+  const checkedInput = document.querySelector('input[name="pack"]:checked');
+  const offerKey = checkedInput ? checkedInput.value : '2g3';
+  const cfg = UPSELL_CONFIG[offerKey] || UPSELL_CONFIG['2g3'];
+
+  const uUnits = cfg.units;
+  const uPrice = cfg.price;
+  const uCopy  = cfg.copy;
   const normalUpsellPrice = uUnits * 10990;
-  const perUnit = uUnits > 0 ? Math.round(uPrice / uUnits) : 0;
-  const totalWithUpsell = (order.price || 0) + uPrice;
+  const perUnit = Math.round(uPrice / uUnits);
+  const mainPrice = order.price || 13990;
+  const mainUnits = order.units || 5;
+  const totalWithUpsell = mainPrice + uPrice;
 
   order.upsellUnits = uUnits;
   order.upsellPrice = uPrice;
 
   document.getElementById('upsellTitle').textContent = '⚡ Mielőtt elküldjük a rendelést…';
   document.getElementById('upsellCopy').textContent = uCopy;
-  document.getElementById('upsellOfferTitle').textContent = uTitle;
+  document.getElementById('upsellOfferTitle').textContent = `+${uUnits} extra csomag — csak ${uPrice.toLocaleString('hu-HU')} Ft`;
   document.getElementById('upsellOldPrice').textContent = normalUpsellPrice.toLocaleString('hu-HU') + ' Ft';
   document.getElementById('upsellNewPrice').textContent = uPrice.toLocaleString('hu-HU') + ' Ft';
   document.getElementById('upsellPer').textContent = `~${perUnit.toLocaleString('hu-HU')} Ft / egység — kevesebb mint egy kávé`;
   document.getElementById('upsellReason').innerHTML = `💡 <strong>Miért éri meg?</strong><br>${uCopy}`;
   document.getElementById('upsellSummary').innerHTML = `
-    Mai rendelésed: ${order.units} egység = ${order.price.toLocaleString('hu-HU')} Ft<br>
+    Mai rendelésed: ${mainUnits} egység = ${mainPrice.toLocaleString('hu-HU')} Ft<br>
     Most hozzáadva: +${uUnits} egység csak ${uPrice.toLocaleString('hu-HU')} Ft<br>
     <span style="color:var(--danger)">Összesen: ${totalWithUpsell.toLocaleString('hu-HU')} Ft utánvéttel</span>
   `;
