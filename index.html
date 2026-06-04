@@ -103,7 +103,7 @@ h2{font-size:clamp(29px,3.8vw,46px);line-height:1.02;letter-spacing:-.05em;margi
 .step-tag{display:inline-block;background:#ecf9e8;color:var(--poison);border-radius:999px;padding:4px 11px;font-size:11px;font-weight:900;margin-top:8px}
 
 /* OFFER / PICKER */
-.offer-sec{background:linear-gradient(180deg,#e8f4e5 0%,#fff 100%)}
+.offer-sec{background:linear-gradient(180deg,#060e08 0%,#0d1a10 40%,#e8f4e5 100%)}
 .picker-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:34px;align-items:start;margin-top:32px}
 .picker-left{position:sticky;top:90px}
 .pack-visual{background:var(--dark);border-radius:22px;padding:26px;display:flex;align-items:center;justify-content:center;min-height:260px;margin-bottom:14px;box-shadow:0 12px 32px rgba(0,0,0,.22)}
@@ -342,54 +342,14 @@ else{window.addEventListener('load',function(){setTimeout(window.__loadPixels,70
 <nav class="nav" id="floatingNav">
   <div class="nav-brand"><span class="bug">🪳</span>ROACH DOCTOR</div>
 </nav>
+<!-- OFFER -->
 
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-bg"><img fetchpriority="high" loading="eager" decoding="async" src="images/roach-hero-bg.webp" alt=""></div>
-  <div class="hero-overlay"></div>
-  <div class="wrap hero-content">
-    <div class="hero-copy fade">
-      <div class="badge-top">⚠️ Korlátozott készlet — 2 000 csomag raktáron</div>
-      <div class="stars-row">
-        <div class="stars-img" aria-label="5 csillag">⭐⭐⭐⭐⭐</div>
-        <span class="stars-count">4.9/5 • 1 200+ vélemény</span>
-      </div>
-      <h1>Csótány a lakásban?<br><span class="red">Ma éjjel vége.</span><br><em>Garantáltan.</em></h1>
-      <p class="hero-sub">Egy apró pötty a sarokban. Éjjel dolgozik. Reggel csend. A Roach Doctor kaszkád hatással pusztítja el a <strong style="color:#fff">teljes fészket</strong> — nem csak az egyedeket.</p>
-      <button class="btn green-hot" data-scroll="#inlineForm" style="width:min(360px,100%);margin:0 auto 0 0;font-size:17px">KÉREM A GÉLT — UTÁNVÉTTEL →</button>
-      <p class="hero-note">Csak akkor fizetsz, amikor a csomag megérkezik az ajtódhoz.</p>
-    </div>
-  </div>
-</header>
-
-<!-- TRUST -->
-<div class="trust-strip">
-  <div class="wrap trust-items">
-    <span>✅ 24 órán belül látható eredmény</span>
-    <span>🥚 Tojásirtás is</span>
-    <span>📦 Diszkrét csomagolás</span>
-    <span>🚚 1–3 munkanap kiszállítás</span>
-    <span>💳 Fizetés átvételkor</span>
-  </div>
-</div>
-
-<!-- PROOF NUMBERS -->
-<div class="proof-band">
-  <div class="wrap proof-nums">
-    <div class="pnum"><div class="big">24 ÓRA</div><div class="lbl">Első eredmény</div></div>
-    <div class="pnum"><div class="big">98%</div><div class="lbl">Sikeres kezelés</div></div>
-    <div class="pnum"><div class="big">1 200+</div><div class="lbl">Magyar vásárló</div></div>
-    <div class="pnum"><div class="big">3 lépés</div><div class="lbl">Az egész fészek</div></div>
-  </div>
-</div>
-
-<!-- BEFORE/AFTER -->
-<section class="offer-sec" id="offer">
+<section class="offer-sec" id="offer" style="padding-top:80px">
   <div class="wrap">
     <div class="center">
-      <p class="eyebrow">Válaszd ki a csomagod</p>
-      <h2>Roach Doctor <span class="grad">Csótányirtó Gél</span></h2>
-      <p class="lead">Minél több csomagot veszel, annál több egységet kapsz ingyen. Egy kezelés ritkán elég — a fészek nagy lehet.</p>
+      <p class="eyebrow" style="color:#5fcf3a">Válaszd ki a csomagod</p>
+      <h2 style="color:#fff">Roach Doctor <span class="grad">Csótányirtó Gél</span></h2>
+      <p class="lead" style="color:rgba(255,255,255,.65)">Minél több csomagot veszel, annál több egységet kapsz ingyen. Egy kezelés ritkán elég — a fészek nagy lehet.</p>
     </div>
     <div class="picker-wrap fade">
       <!-- LEFT: visual + math -->
@@ -530,6 +490,46 @@ else{window.addEventListener('load',function(){setTimeout(window.__loadPixels,70
 </section>
 
 <!-- REVIEWS -->
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg"><img fetchpriority="high" loading="eager" decoding="async" src="images/roach-hero-bg.webp" alt=""></div>
+  <div class="hero-overlay"></div>
+  <div class="wrap hero-content">
+    <div class="hero-copy fade">
+      <div class="badge-top">⚠️ Korlátozott készlet — 2 000 csomag raktáron</div>
+      <div class="stars-row">
+        <div class="stars-img" aria-label="5 csillag">⭐⭐⭐⭐⭐</div>
+        <span class="stars-count">4.9/5 • 1 200+ vélemény</span>
+      </div>
+      <h1>Csótány a lakásban?<br><span class="red">Ma éjjel vége.</span><br><em>Garantáltan.</em></h1>
+      <p class="hero-sub">Egy apró pötty a sarokban. Éjjel dolgozik. Reggel csend. A Roach Doctor kaszkád hatással pusztítja el a <strong style="color:#fff">teljes fészket</strong> — nem csak az egyedeket.</p>
+      <button class="btn green-hot" data-scroll="#inlineForm" style="width:min(360px,100%);margin:0 auto 0 0;font-size:17px">KÉREM A GÉLT — UTÁNVÉTTEL →</button>
+      <p class="hero-note">Csak akkor fizetsz, amikor a csomag megérkezik az ajtódhoz.</p>
+    </div>
+  </div>
+</header>
+
+<!-- TRUST -->
+<div class="trust-strip">
+  <div class="wrap trust-items">
+    <span>✅ 24 órán belül látható eredmény</span>
+    <span>🥚 Tojásirtás is</span>
+    <span>📦 Diszkrét csomagolás</span>
+    <span>🚚 1–3 munkanap kiszállítás</span>
+    <span>💳 Fizetés átvételkor</span>
+  </div>
+</div>
+
+<!-- PROOF NUMBERS -->
+<div class="proof-band">
+  <div class="wrap proof-nums">
+    <div class="pnum"><div class="big">24 ÓRA</div><div class="lbl">Első eredmény</div></div>
+    <div class="pnum"><div class="big">98%</div><div class="lbl">Sikeres kezelés</div></div>
+    <div class="pnum"><div class="big">1 200+</div><div class="lbl">Magyar vásárló</div></div>
+    <div class="pnum"><div class="big">3 lépés</div><div class="lbl">Az egész fészek</div></div>
+  </div>
+</div>
+
 <section class="cream-sec">
   <div class="wrap center">
     <p class="eyebrow">Miért más ez?</p>
@@ -592,7 +592,6 @@ else{window.addEventListener('load',function(){setTimeout(window.__loadPixels,70
   </div>
 </section>
 
-<!-- OFFER -->
 <section>
   <div class="wrap">
     <div class="center">
